@@ -1,7 +1,6 @@
 {
   "mappings": [
     "/content/eli-lilly-aue/:/",
-    "/content/eli-lilly-aue/index/test/:/test",
     "/content/eli-lilly-aue/configuration:/.helix/config.json",
     "/content/eli-lilly-aue/metadata:/metadata.json"
   ],
