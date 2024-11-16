@@ -11,5 +11,6 @@ export default function decorate(block) {
     console.log("block info ",block);
     console.log("html info",html);
     block.textContent = '';
-    render(html`<${Hero} />`, block);
+   const somefunction = render(html`<${Hero} />`, block);
+   console.log("some function returned",somefunction);
 }
