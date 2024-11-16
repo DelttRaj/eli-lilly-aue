@@ -127,7 +127,7 @@ async function loadLazy(doc) {
 
   //loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadCSS(`${window.hlx.codeBasePath}/styles/bootstrap.css`);
-  loadScript('https://cdn.tailwindcss.com');
+  //loadScript('https://cdn.tailwindcss.com');
   loadFonts();
 }
 
