@@ -8,10 +8,6 @@ function Hero(){
     return html`<h1>Hello Hero!</h1>`;
 }
 export default function decorate(block) {
-    console.log("block info ",block.body);
-    console.log("document body",document.body);
-    console.log("html info",html);
-    block.textContent = '';
-   const somefunction = render(html`<${Hero} />`, block);
-   console.log("some function returned",somefunction);
+    console.log("block info ",block);
+    render(html`<${Hero} />`, block);
 }
