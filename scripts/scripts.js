@@ -128,6 +128,14 @@ async function loadLazy(doc) {
   loadFonts();
 }
 
+function loadBootstrapCSS(href){
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = href;
+  document.head.appendChild(link);
+}
+
+
 /**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
@@ -140,6 +148,7 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  loadBootstrapCSS('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
