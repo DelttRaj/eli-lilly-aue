@@ -9,5 +9,6 @@ function Hero(){
 }
 export default function decorate(block) {
     console.log("block info ",block);
+    console.log("Info from hero ",Hero());
     render(html`<${Hero} />`, block);
 }
