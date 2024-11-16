@@ -10,5 +10,6 @@ function Hero(){
 export default function decorate(block) {
     console.log("block info ",block);
     console.log("html info",html);
+    block.textContent = '';
     render(html`<${Hero} />`, block);
 }
