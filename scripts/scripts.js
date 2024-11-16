@@ -10,6 +10,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  loadScript
 } from './aem.js';
 
 /**
@@ -125,7 +126,7 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
-  loadCSS('https://cdn.tailwindcss.com');
+  loadScript('https://cdn.tailwindcss.com');
   loadFonts();
 }
 
