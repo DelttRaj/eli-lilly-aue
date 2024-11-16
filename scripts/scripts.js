@@ -148,10 +148,10 @@ function loadDelayed() {
 }
 
 async function loadPage() {
-  loadBootstrapCSS('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+  loadBootstrapCSS('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 }
 
 loadPage();
