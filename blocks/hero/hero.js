@@ -8,7 +8,7 @@ function Hero(){
     return html`<h1>Hello Hero!</h1>`;
 }
 export default function decorate(block) {
-    console.log("block info ",block);
+    console.log("block info ",block.body);
     console.log("html info",html);
     block.textContent = '';
    const somefunction = render(html`<${Hero} />`, block);
