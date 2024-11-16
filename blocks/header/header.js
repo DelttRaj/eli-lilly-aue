@@ -102,6 +102,14 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     nav.removeEventListener('focusout', closeOnFocusLost);
   }
 }
+/**
+ * add the bootstrap class list tio the element
+ * @param {Element,Array} block and the class array -to the header block element
+ */
+function addClassBootstrapClass(block,classArr){
+  const cls = block.classList;
+  cls.add.apply(cls,classArr);
+}
 
 /**
  * loads and decorates the header, mainly the nav
@@ -118,6 +126,9 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+
+  //Add the bootstrap classes
+  addClassBootstrapClass(nav,['d-xl-flex', 'd-none', 'container-xxl', 'px-lg-5', 'px-3']);
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
