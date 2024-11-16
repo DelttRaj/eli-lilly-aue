@@ -12,7 +12,6 @@ function Hero(){
     return html`<h1>Hello Hero!</h1>`;
 }
 export default function decorate(block) {
-  const info = extractBlockInfo(block);
-    block.innerHTML = '';
+    const info = extractBlockInfo(block);
     render(html`<${Hero} />`, block);
 }
