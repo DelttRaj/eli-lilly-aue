@@ -8,9 +8,12 @@ function extractBlockInfo(block) {
     return herodataJSON;
 }
 
-function Hero(props){
-    console.log("Props inside Hero ",props);
-    return html`<h1>Hello Hero!</h1>`;
+
+function Hero({textElement}){
+    const preactHeroWrapper = document.createElement("div");
+    const textContent = textElement.textContent;
+    moveInstrumentation(textElement,preactHeroWrapper)
+    return html`<div>${preactHeroWrapper}</div>`;
 }
 export default function decorate(block) {
     const info = extractBlockInfo(block);
