@@ -14,6 +14,6 @@ function Hero(props){
 }
 export default function decorate(block) {
     const info = extractBlockInfo(block);
-   // block.textContent = "";
+    block.textContent = "";
     render(html`<${Hero} data=${info}/>`, block);
 }
