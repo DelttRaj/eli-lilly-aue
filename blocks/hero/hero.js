@@ -18,7 +18,7 @@ function Hero(props) {
     return html`
         <div>
             <div ref=${wrapperRef} data-editable="true" data-attribute="hero">
-               <p></p>
+               <p class="preact_text">${textContent}</p>
             </div>
         </div>
     `;
