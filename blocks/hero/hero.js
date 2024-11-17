@@ -3,20 +3,17 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 
 function extractBlockInfo(block) {
-    const herodataJSON = {
-        "textHTML" : "",
-        "alt" : "",
-        "image" : ""
-    }
-
-    console.log("block info inside extract block info : ",block);
+    const herodataJSON = {    };
+    herodataJSON.textElement = block.querySelector("div:nth-child(2) > div > div");
+    return herodataJSON;
 }
 
-function Hero(){
+function Hero(props){
+    console.log("Props inside Hero ",props);
     return html`<h1>Hello Hero!</h1>`;
 }
 export default function decorate(block) {
     const info = extractBlockInfo(block);
    // block.textContent = "";
-    render(html`<${Hero} />`, block);
+    render(html`<${Hero} data=${info}/>`, block);
 }
