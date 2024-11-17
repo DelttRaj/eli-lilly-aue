@@ -1,15 +1,19 @@
-import { html, render, useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
+import { html, render } from 'https://esm.sh/htm/preact/standalone';
+import { useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function extractBlockInfo(block) {
     const herodataJSON = {};
     herodataJSON.textElement = block.querySelector("div:nth-child(2) > div > div");
+    herodataJSON.parentDiv = block; // Reference the parent div
     return herodataJSON;
 }
 
 function Hero(props) {
-    // State to hold the text content
-    const [textContent, setTextContent] = useState(props?.data?.textElement?.textContent);
+    const [isVisible, setIsVisible] = useState(() => {
+        const style = props?.data?.parentDiv?.style;
+        return style?.display !== 'none';
+    });
 
     const wrapperRef = (node) => {
         if (node && props?.data?.textElement) {
@@ -17,27 +21,34 @@ function Hero(props) {
         }
     };
 
-    // Use an effect to listen for text content changes
+    // Monitor `style` attribute for changes
     useEffect(() => {
+        const parentDiv = props?.data?.parentDiv;
+
         const observer = new MutationObserver(() => {
-            const updatedText = props?.data?.textElement?.textContent;
-            if (updatedText !== textContent) {
-                setTextContent(updatedText); // Update the state when the text changes
+            const style = parentDiv?.style;
+            const display = style?.display !== 'none';
+            if (display !== isVisible) {
+                setIsVisible(display); // Update visibility state
             }
         });
 
-        if (props?.data?.textElement) {
-            observer.observe(props.data.textElement, { childList: true, subtree: true });
+        if (parentDiv) {
+            observer.observe(parentDiv, { attributes: true, attributeFilter: ['style'] });
         }
 
-        // Cleanup the observer on unmount
+        // Cleanup on component unmount
         return () => observer.disconnect();
-    }, [props?.data?.textElement, textContent]);
+    }, [props?.data?.parentDiv, isVisible]);
+
+    // If the component is not visible, render nothing
+    if (!isVisible) return null;
 
     return html`
         <div>
             <div ref=${wrapperRef} data-editable="true" data-attribute="hero">
-                <p class="preact_text">${textContent}</p>
+                <!-- Add static content or children here -->
+                <p class="preact_text">Hero Content Here</p>
             </div>
         </div>
     `;
