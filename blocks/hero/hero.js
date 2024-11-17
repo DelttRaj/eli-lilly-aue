@@ -19,5 +19,5 @@ export default function decorate(block) {
     moveInstrumentation(block,proxyblockdiv);
     const info = extractBlockInfo(proxyblockdiv);
     block.textContent = "";
-    render(html`<${Hero} />`, heroWrapperDiv);
+    render(html`<${Hero} />`, block);
 }
