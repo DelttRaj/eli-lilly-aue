@@ -15,8 +15,9 @@ function Hero(){
     return html`<h1>Hello Hero!</h1>`;
 }
 export default function decorate(block) {
-    const info = extractBlockInfo(block);
-    const heroWrapperDiv = document.createElement('div');
+    const proxyblockdiv = document.createElement('div');
+    moveInstrumentation(block,proxyblockdiv);
+    const info = extractBlockInfo(proxyblockdiv);
     block.textContent = "";
     render(html`<${Hero} />`, heroWrapperDiv);
 }
