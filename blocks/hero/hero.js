@@ -11,7 +11,7 @@ function extractBlockInfo(block) {
 
 function Hero({textElement}){
     const preactHeroWrapper = document.createElement("div");
-    const textContent = textElement.textContent;
+   // const textContent = textElement.textContent;
     moveInstrumentation(textElement,preactHeroWrapper)
     return html`<div>${preactHeroWrapper}</div>`;
 }
