@@ -1,4 +1,5 @@
-import { html, render,vhtml } from 'https://esm.sh/htm/preact/standalone'
+import { html, render } from 'https://esm.sh/htm/preact/standalone';
+import {vhtml} from "https://esm.sh/vhtml@2.2.0";
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 
