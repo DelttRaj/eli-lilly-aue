@@ -8,19 +8,17 @@ function extractBlockInfo(block) {
 }
 
 function Hero(props) {
-    // Reference for the div wrapper to enable instrumentation
+    const textContent = props?.data?.textElement.textContent;
     const wrapperRef = (node) => {
         if (node && props?.data?.textElement) {
-            // Move instrumentation and keep it editable
             moveInstrumentation(props.data.textElement, node);
         }
     };
-
-    // Use HTM to ensure the wrapper is included in the JSX tree
+  
     return html`
         <div>
             <div ref=${wrapperRef} data-editable="true" data-attribute="hero">
-                <!-- Preact will manage this div, but it remains editable for AEM -->
+               <p></p>
             </div>
         </div>
     `;
