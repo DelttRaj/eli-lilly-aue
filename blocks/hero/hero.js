@@ -1,10 +1,13 @@
-import { h, render } from 'https://esm.sh/preact';
-import htm from 'https://esm.sh/htm';
+import { html, render,vhtml } from 'https://esm.sh/htm/preact/standalone'
+import { moveInstrumentation } from '../../scripts/scripts.js';
 
-// Initialize htm with Preact
-const html = htm.bind(h);
 
 function extractBlockInfo(block) {
+    const herodataJSON = {
+        "text" : "",
+        "alt" : "",
+        "image" : ""
+    }
     console.log("block info ",block);
 }
 
