@@ -1,4 +1,4 @@
-import { html, render } from 'https://esm.sh/htm/preact/standalone';
+import { html, render, useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function extractBlockInfo(block) {
@@ -8,17 +8,36 @@ function extractBlockInfo(block) {
 }
 
 function Hero(props) {
-    const textContent = props?.data?.textElement.textContent;
+    // State to hold the text content
+    const [textContent, setTextContent] = useState(props?.data?.textElement?.textContent);
+
     const wrapperRef = (node) => {
         if (node && props?.data?.textElement) {
             moveInstrumentation(props.data.textElement, node);
         }
     };
-  
+
+    // Use an effect to listen for text content changes
+    useEffect(() => {
+        const observer = new MutationObserver(() => {
+            const updatedText = props?.data?.textElement?.textContent;
+            if (updatedText !== textContent) {
+                setTextContent(updatedText); // Update the state when the text changes
+            }
+        });
+
+        if (props?.data?.textElement) {
+            observer.observe(props.data.textElement, { childList: true, subtree: true });
+        }
+
+        // Cleanup the observer on unmount
+        return () => observer.disconnect();
+    }, [props?.data?.textElement, textContent]);
+
     return html`
         <div>
             <div ref=${wrapperRef} data-editable="true" data-attribute="hero">
-               <p class="preact_text">${textContent}</p>
+                <p class="preact_text">${textContent}</p>
             </div>
         </div>
     `;
