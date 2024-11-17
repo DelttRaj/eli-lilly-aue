@@ -13,7 +13,7 @@ function Hero(props){
     const preactHeroWrapper = document.createElement("div");
    // const textContent = textElement.textContent;
     moveInstrumentation(props?.data?.textElement,preactHeroWrapper)
-    return html`<div>${preactHeroWrapper}</div>`;
+    return html`<div>${preactHeroWrapper.outerHTML}</div>`;
 }
 export default function decorate(block) {
     const info = extractBlockInfo(block);
