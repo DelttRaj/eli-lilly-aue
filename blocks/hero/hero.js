@@ -25,8 +25,10 @@ function Hero(props) {
 }
 
 export default function decorate(block) {
+    const wrapperDiv = document.createElement('div');
     const info = extractBlockInfo(block);
     block.textContent = '';
     // Render the Hero component into the block
-    render(html`<${Hero} data=${info} />`, block);
+    render(html`<${Hero} data=${info} />`, wrapperDiv);
+    block.append(wrapperDiv);
 }
