@@ -21,7 +21,7 @@ function extractBlockInfo(block) {
  * @returns {HTMLImageElement} The image element within the picture element.
  */
 function fetchImage(pictureElement) {
-    return pictureElement.querySelector("img");
+    return pictureElement?.querySelector("img");
 }
 
 /**
