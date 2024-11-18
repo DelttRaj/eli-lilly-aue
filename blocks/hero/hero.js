@@ -34,7 +34,7 @@ function Hero(props) {
     return html`
         <div>
             <div ref=${wrapperRef} data-editable="true" data-attribute="hero">
-               <p class="preact_text">${textContent}</p>
+               <h2 class="preact_text">${textContent}</h2>
             </div>
         </div>
     `;
