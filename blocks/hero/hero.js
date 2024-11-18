@@ -62,6 +62,7 @@ function Hero(props) {
                     <div class="row align-items-center pt-lg-4">
                         <div class="col-lg-6 col-md-12 col-sm-12 order-sm-2 text-center">
                             <img
+                                ref="${imageWrapperRef}"
                                 alt="Doctor speaking with a patient via telehealth"
                                 aria-label="Doctor speaking with a patient via telehealth"
                                 loading="lazy"
