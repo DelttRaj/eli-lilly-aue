@@ -37,7 +37,7 @@ function Hero(props) {
 
     return html`
         <div>
-            <div ref=${wrapperRef}>
+            <div>
                 <div class="container-lg py-5">
                     <div class="row align-items-center pt-lg-4">
                         <div class="col-lg-6 col-md-12 col-sm-12 order-sm-2 text-center">
@@ -55,7 +55,9 @@ function Hero(props) {
                             />
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 order-sm-1">
-                            <h2 class="homeCare_title__m3INc font-xl mb-4 text-lg-start text-center">${textContent}</h2>
+                            <div ref="${wrapperRef}">
+                                <h2 class="homeCare_title__m3INc font-xl mb-4 text-lg-start text-center">${textContent}</h2>
+                            </div>    
                             <img
                                 alt="Doctor speaking with a patient via telehealth"
                                 aria-label="Doctor speaking with a patient via telehealth"
