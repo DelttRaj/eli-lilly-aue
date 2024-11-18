@@ -3,8 +3,9 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function extractBlockInfo(block) {
     const herodataJSON = {};
-    herodataJSON.textElement = block.querySelector("div:nth-child(2) > div > div");
-    return herodataJSON;
+   // herodataJSON.textElement = block.querySelector("div:nth-child(2) > div > div");
+   herodataJSON.textElement  = block.children[1].querySelector(`[data-aue-type="richtext"]`);
+   return herodataJSON;
 }
 
 function Hero(props) {
