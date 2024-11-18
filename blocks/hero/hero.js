@@ -14,14 +14,14 @@ function extractBlockInfo(block) {
    return herodataJSON;
 }
 
-function fetchImage(pictureElement){
-    const img = pictureElement.querySelector("img");
-    if(img){
-        return img;
-    }
-    else {
-        const source = pictureElement.querySelector("source");
-    }
+/**
+ * Fetches the image element from the given picture element.
+ *
+ * @param {HTMLElement} pictureElement - The picture element containing the image.
+ * @returns {HTMLImageElement} The image element within the picture element.
+ */
+function fetchImage(pictureElement) {
+    return pictureElement.querySelector("img");
 }
 
 /**
@@ -32,27 +32,22 @@ function fetchImage(pictureElement){
  */
 function Hero(props) {
     const wrapperRef = (node) => {
-        if (node && props?.data?.textBlock) {
-            const textBlock = props?.data?.textBlock?.querySelector(`[data-aue-type="richtext"]`);
-            if (textBlock) {
-                moveInstrumentation(textBlock, node);
-            } else {
-                console.warn("Text block with `[data-aue-type=\"richtext\"]` not found.");
-            }
+        const textBlock = props?.data?.textBlock?.querySelector(`[data-aue-type="richtext"]`);
+        if (node && textBlock) {
+            moveInstrumentation(textBlock, node);
         } else {
-            console.warn("Wrapper node is undefined.");
+            console.warn(node ? "Text block with `[data-aue-type=\"richtext\"]` not found." : "Wrapper node is undefined.");
         }
     };
 
     const textContent = props?.data?.textBlock?.textContent || 'Default content';
     const imagesource = fetchImage(props?.data?.pictureBlock)?.src;
     const imageWrapperRef = (node) => {
-        if(node &&  props?.data?.pictureBlock)
-        {
-            const imageElement = fetchImage(props?.data?.pictureBlock);
-            moveInstrumentation(imageElement,node);
+        const imageElement = fetchImage(props?.data?.pictureBlock);
+        if (node && imageElement) {
+            moveInstrumentation(imageElement, node);
         }
-    }
+    };
    // const pictureBlock =
 
 
