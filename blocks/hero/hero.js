@@ -32,7 +32,7 @@ function Hero(props) {
     };
   
     return html`
-  <div ref=${wrapperRef} data-editable="true" data-attribute="hero" data-test-locator="6nHIdexe" style="background-color: rgb(254, 243, 242);">
+    <div data-editable="true" data-attribute="hero" data-test-locator="6nHIdexe" style="background-color: rgb(254, 243, 242);">
     <div class="container-lg py-5">
         <div class="row align-items-center pt-lg-4">
             <div class="col-lg-6 col-md-12 col-sm-12 order-sm-2 text-center"><img
@@ -74,7 +74,6 @@ function Hero(props) {
         </div>
     </div>
     </div>
-
     `;
 }
 /**
