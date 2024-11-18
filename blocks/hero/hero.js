@@ -37,7 +37,7 @@ function Hero(props) {
 
     return html`
         <div>
-            <div>
+            <div style="background-color: rgb(254, 243, 242);">
                 <div class="container-lg py-5">
                     <div class="row align-items-center pt-lg-4">
                         <div class="col-lg-6 col-md-12 col-sm-12 order-sm-2 text-center">
