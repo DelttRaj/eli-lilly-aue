@@ -14,7 +14,7 @@ function Hero(props) {
         if (node && props?.data?.textBlock) {
             const textBlock = props?.data?.textBlock.querySelector(`[data-aue-type="richtext"]`);
             if(textBlock){
-                moveInstrumentation(props.data.textBlock, node);
+                moveInstrumentation(textBlock, node);
             }
         }
     };
