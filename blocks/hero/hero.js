@@ -45,6 +45,7 @@ function Hero(props) {
     };
 
     const textContent = props?.data?.textBlock?.textContent || 'Default content';
+    const imagesource = fetchImage(props?.data?.pictureBlock).contains("/content") ? img.src : '';
     const imageWrapperRef = (node) => {
         if(node &&  props?.data?.pictureBlock)
         {
@@ -71,7 +72,7 @@ function Hero(props) {
                                 decoding="async"
                                 data-nimg="1"
                                 class="d-none d-lg-block"
-                                src="https://images.ctfassets.net/69ly9ke0opik/2tMzxv0PIMWtjS1c658aWT/dba2a61074b7baefc84e64c26e0cd466/illu-telehealth.svg"
+                                src="${imagesource}"
                                 style="color: transparent;"
                             />
                         </div>
@@ -89,7 +90,7 @@ function Hero(props) {
                                 decoding="async"
                                 data-nimg="1"
                                 class="d-lg-none d-block p-3 p-lg-none m-auto"
-                                src="https://images.ctfassets.net/69ly9ke0opik/2tMzxv0PIMWtjS1c658aWT/dba2a61074b7baefc84e64c26e0cd466/illu-telehealth.svg"
+                                src="${imagesource}"
                                 style="color: transparent;"
                             />
                             <ul class="homeCare_careList__DMW8a font-sm mb-4 ms-4">
