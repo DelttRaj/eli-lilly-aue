@@ -43,7 +43,7 @@
         },
         {
           "component": "richtext",
-          "name": "text",
+          "name": "desctext",
           "value": "",
           "label": "Description",
           "valueType": "string"
