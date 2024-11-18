@@ -45,7 +45,7 @@ function Hero(props) {
     };
 
     const textContent = props?.data?.textBlock?.textContent || 'Default content';
-    const imagesource = fetchImage(props?.data?.pictureBlock).contains("/content") ? img.src : '';
+    const imagesource = fetchImage(props?.data?.pictureBlock)?.src?.includes("/content") ? fetchImage(props?.data?.pictureBlock)?.src : '';
     const imageWrapperRef = (node) => {
         if(node &&  props?.data?.pictureBlock)
         {
