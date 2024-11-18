@@ -14,10 +14,10 @@ function extractBlockInfo(block) {
    return herodataJSON;
 }
 
-function fetchImageSrc(pictureElement){
+function fetchImage(pictureElement){
     const img = pictureElement.querySelector("img");
-    if(img){
-        return img.src;
+    if(img && img.src.includes("/content")){
+        return img;
     }
     else {
         const source = eElement.querySelector("source");
@@ -48,8 +48,8 @@ function Hero(props) {
     const imageWrapperRef = (node) => {
         if(node &&  props?.data?.pictureBlock)
         {
-            const src = fetchImageSrc(props?.data?.pictureBlock);
-            
+            const imageElement = fetchImage(props?.data?.pictureBlock);
+            moveInstrumentation(imageElement,node);
         }
     }
    // const pictureBlock =
