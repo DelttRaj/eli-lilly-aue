@@ -9,8 +9,19 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 function extractBlockInfo(block) {
     const herodataJSON = {};
  //  herodataJSON.textBlock  = block.children[1].querySelector(`[data-aue-type="richtext"]`);
-   herodataJSON.textBlock  = block.children[1].children[0]; 
+   herodataJSON.textBlock  = block?.children[1]?.children[0]; 
+   herodataJSON.pictureBlock = block?.children[0]?.children[0]?.getElementsByTagName("picture")[0];
    return herodataJSON;
+}
+
+function fetchImageSrc(pictureElement){
+    const img = pictureElement.querySelector("img");
+    if(img){
+        return img.src;
+    }
+    else {
+        const source = eElement.querySelector("source");
+    }
 }
 
 /**
@@ -21,7 +32,7 @@ function extractBlockInfo(block) {
  */
 function Hero(props) {
     const wrapperRef = (node) => {
-        if (node) {
+        if (node && props?.data?.textBlock) {
             const textBlock = props?.data?.textBlock?.querySelector(`[data-aue-type="richtext"]`);
             if (textBlock) {
                 moveInstrumentation(textBlock, node);
@@ -34,6 +45,15 @@ function Hero(props) {
     };
 
     const textContent = props?.data?.textBlock?.textContent || 'Default content';
+    const imageWrapperRef = (node) => {
+        if(node &&  props?.data?.pictureBlock)
+        {
+            const src = fetchImageSrc(props?.data?.pictureBlock);
+            
+        }
+    }
+   // const pictureBlock =
+
 
     return html`
         <div>
@@ -59,6 +79,7 @@ function Hero(props) {
                                 <h2 class="homeCare_title__m3INc font-xl mb-4 text-lg-start text-center">${textContent}</h2>
                             </div>    
                             <img
+                                ref="${imageWrapperRef}"
                                 alt="Doctor speaking with a patient via telehealth"
                                 aria-label="Doctor speaking with a patient via telehealth"
                                 loading="lazy"
