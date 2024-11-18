@@ -3,7 +3,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function extractBlockInfo(block) {
     const herodataJSON = {};
-   // herodataJSON.textElement = block.querySelector("div:nth-child(2) > div > div");
+ //  herodataJSON.textBlock  = block.children[1].querySelector(`[data-aue-type="richtext"]`);
    herodataJSON.textBlock  = block.children[1].children[0];
    return herodataJSON;
 }
@@ -12,7 +12,10 @@ function Hero(props) {
     const textContent = props?.data?.textBlock.textContent;
     const wrapperRef = (node) => {
         if (node && props?.data?.textBlock) {
-            moveInstrumentation(props.data.textBlock, node);
+            const textBlock = props?.data?.textBlock.querySelector(`[data-aue-type="richtext"]`);
+            if(textBlock){
+                moveInstrumentation(props.data.textBlock, node);
+            }
         }
     };
   
