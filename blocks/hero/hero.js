@@ -34,7 +34,46 @@ function Hero(props) {
     return html`
         <div>
             <div ref=${wrapperRef}>
-               <h2 class="preact_text">${textContent}</h2>
+            <div class="container-lg py-5">
+        <div class="row align-items-center pt-lg-4">
+            <div class="col-lg-6 col-md-12 col-sm-12 order-sm-2 text-center"><img
+                    alt="Doctor speaking with a patient via telehealth"
+                    aria-label="Doctor speaking with a patient via telehealth" loading="lazy" width="547" height="450"
+                    decoding="async" data-nimg="1" class="d-none d-lg-block"
+                    src="https://images.ctfassets.net/69ly9ke0opik/2tMzxv0PIMWtjS1c658aWT/dba2a61074b7baefc84e64c26e0cd466/illu-telehealth.svg"
+                    style="color: transparent;"></div>
+            <div class="col-lg-6 col-md-12 col-sm-12 order-sm-1">
+                <h2 class="homeCare_title__m3INc font-xl mb-4 text-lg-start text-center">${textContent}</h2><img
+                    alt="Doctor speaking with a patient via telehealth"
+                    aria-label="Doctor speaking with a patient via telehealth" loading="lazy" width="395" height="325"
+                    decoding="async" data-nimg="1" class="d-lg-none d-block p-3 p-lg-none m-auto"
+                    src="https://images.ctfassets.net/69ly9ke0opik/2tMzxv0PIMWtjS1c658aWT/dba2a61074b7baefc84e64c26e0cd466/illu-telehealth.svg"
+                    style="color: transparent;">
+                <ul class="homeCare_careList__DMW8a font-sm mb-4 ms-4">
+                    <li><b>Convenient - </b> Get answers, test results, care plans, and prescriptions. All without
+                        waiting rooms or traffic.*</li>
+                    <li><b>Knowledgeable - </b> Talk to independent healthcare professionals who may understand your
+                        condition.</li>
+                    <li><b>Supportive - </b> Gain additional resources, such as nutritional guidance, tips for success,
+                        and helpful communities.</li>
+                </ul>
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-12 col-sm-12">
+                        <p class="fw-bold mb-2 font-md text-center text-lg-start">Get care for:</p>
+                        <div class="text-lg-start text-center"><a
+                                class="_button_button__VwqiT md-button secondary-blue-button me-3 my-lg-0 ms-lg-0 bg-transparent"
+                                aria-label="Diabetes Telehealth" href="/telehealth/diabetes">Diabetes</a><a
+                                class="_button_button__VwqiT md-button secondary-blue-button me-3 my-lg-0 ms-lg-0 bg-transparent"
+                                aria-label="Migraine Telehealth" href="/telehealth/migraine">Migraine</a><a
+                                class="_button_button__VwqiT md-button secondary-blue-button me-3 my-lg-0 ms-lg-0 bg-transparent"
+                                aria-label="Obesity Telehealth" href="/telehealth/obesity">Obesity</a></div>
+                    </div>
+                </div>
+                <p class="font-xs fst-italic text-center text-lg-start">* Access to telehealth services varies by state
+                    and condition.</p>
+            </div>
+        </div>
+    </div>
             </div>
         </div>
     `;
