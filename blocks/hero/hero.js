@@ -16,11 +16,11 @@ function extractBlockInfo(block) {
 
 function fetchImage(pictureElement){
     const img = pictureElement.querySelector("img");
-    if(img && img.src.includes("/content")){
+    if(img){
         return img;
     }
     else {
-        const source = eElement.querySelector("source");
+        const source = pictureElement.querySelector("source");
     }
 }
 
