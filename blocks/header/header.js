@@ -128,7 +128,7 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   //Add the bootstrap classes
-  addClassBootstrapClass(nav,['d-xl-flex', 'd-none', 'container-xxl', 'px-lg-5', 'px-3']);
+ 
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
