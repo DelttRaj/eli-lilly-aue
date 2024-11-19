@@ -46,13 +46,14 @@ function Hero(props) {
         if (node && descriptionBlock) {
             moveInstrumentation(descriptionBlock, node);
         } else {
-            const innerHTMLDesc = props?.data?.descriptionBlock?.innerHTML
+         
             console.warn(node ? "Description block with `[data-aue-type=\"description\"]` not found." : "Description wrapper node is undefined.");
         }
     };
     props?.data?.descriptionBlock?.children[0]
     const textContent = props?.data?.textBlock?.textContent || 'Default content';
     const imagesource = fetchImage(props?.data?.pictureBlock)?.src;
+    const innerHTMLDesc = props?.data?.descriptionBlock?.innerHTML || '<p>Default content</p>';
     const imageWrapperRef = (node) => {
         const imageElement = fetchImage(props?.data?.pictureBlock);
         if (node && imageElement) {
@@ -101,6 +102,8 @@ function Hero(props) {
                             />
                             <div>
                                 <div ref="${descriptionRef}">
+                                <div dangerouslySetInnerHTML=${{ __html: innerHTMLDesc }}>
+                                </div>
                                 </div>
                             </div>
                             <div class="row mb-4 align-items-center">
