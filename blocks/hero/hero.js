@@ -11,6 +11,7 @@ function extractBlockInfo(block) {
  //  herodataJSON.textBlock  = block.children[1].querySelector(`[data-aue-type="richtext"]`);
    herodataJSON.textBlock  = block?.children[1]?.children[0]; 
    herodataJSON.pictureBlock = block?.children[0]?.children[0]?.getElementsByTagName("picture")[0];
+   herodataJSON.descriptionBlock = block?.children[2]?.children[0];
    return herodataJSON;
 }
 
@@ -40,6 +41,16 @@ function Hero(props) {
         }
     };
 
+    const descriptionRef = (node) => {
+        const descriptionBlock = props?.data?.descriptionBlock?.querySelector(`[data-aue-type="richtext"]`);
+        if (node && descriptionBlock) {
+            moveInstrumentation(descriptionBlock, node);
+        } else {
+            const innerHTMLDesc = props?.data?.descriptionBlock?.innerHTML
+            console.warn(node ? "Description block with `[data-aue-type=\"description\"]` not found." : "Description wrapper node is undefined.");
+        }
+    };
+    props?.data?.descriptionBlock?.children[0]
     const textContent = props?.data?.textBlock?.textContent || 'Default content';
     const imagesource = fetchImage(props?.data?.pictureBlock)?.src;
     const imageWrapperRef = (node) => {
@@ -88,20 +99,10 @@ function Hero(props) {
                                 src="${imagesource}"
                                 style="color: transparent;"
                             />
-                            <ul class="homeCare_careList__DMW8a font-sm mb-4 ms-4">
-                                <li>
-                                    <b>Convenient - </b> Get answers, test results, care plans, and prescriptions. All
-                                    without waiting rooms or traffic.*
-                                </li>
-                                <li>
-                                    <b>Knowledgeable - </b> Talk to independent healthcare professionals who may
-                                    understand your condition.
-                                </li>
-                                <li>
-                                    <b>Supportive - </b> Gain additional resources, such as nutritional guidance, tips
-                                    for success, and helpful communities.
-                                </li>
-                            </ul>
+                            <div>
+                                <div ref="${descriptionRef}">
+                                </div>
+                            </div>
                             <div class="row mb-4 align-items-center">
                                 <div class="col-md-12 col-sm-12">
                                     <p class="fw-bold mb-2 font-md text-center text-lg-start">Get care for:</p>
