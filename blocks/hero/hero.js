@@ -51,7 +51,7 @@ function Hero(props) {
         }
     };
     props?.data?.descriptionBlock?.children[0]
-    const textContent = props?.data?.textBlock?.textContent || 'Default content';
+    const textContent = props?.data?.textBlock?.innerHTML || 'Default content';
     const imagesource = fetchImage(props?.data?.pictureBlock)?.src;
     const innerHTMLDesc = props?.data?.descriptionBlock?.innerHTML || '<p>Default content</p>';
     const imageWrapperRef = (node) => {
@@ -85,7 +85,7 @@ function Hero(props) {
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 order-sm-1">
                             <div ref="${wrapperRef}">
-                                <h2 class="homeCare_title__m3INc font-xl mb-4 text-lg-start text-center">${textContent}</h2>
+                                <div dangerouslySetInnerHTML=${{ __html: textContent }}></div>
                             </div>    
                             <img
                                 ref="${imageWrapperRef}"
