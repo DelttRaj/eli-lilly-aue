@@ -106,37 +106,6 @@ function Hero(props) {
                                 </div>
                                 </div>
                             </div>
-                            <div class="row mb-4 align-items-center">
-                                <div class="col-md-12 col-sm-12">
-                                    <p class="fw-bold mb-2 font-md text-center text-lg-start">Get care for:</p>
-                                    <div class="text-lg-start text-center">
-                                        <a
-                                            class="_button_button__VwqiT md-button secondary-blue-button me-3 my-lg-0 ms-lg-0 bg-transparent"
-                                            aria-label="Diabetes Telehealth"
-                                            href="/telehealth/diabetes"
-                                        >
-                                            Diabetes
-                                        </a>
-                                        <a
-                                            class="_button_button__VwqiT md-button secondary-blue-button me-3 my-lg-0 ms-lg-0 bg-transparent"
-                                            aria-label="Migraine Telehealth"
-                                            href="/telehealth/migraine"
-                                        >
-                                            Migraine
-                                        </a>
-                                        <a
-                                            class="_button_button__VwqiT md-button secondary-blue-button me-3 my-lg-0 ms-lg-0 bg-transparent"
-                                            aria-label="Obesity Telehealth"
-                                            href="/telehealth/obesity"
-                                        >
-                                            Obesity
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="font-xs fst-italic text-center text-lg-start">
-                                * Access to telehealth services varies by state and condition.
-                            </p>
                         </div>
                     </div>
                 </div>
