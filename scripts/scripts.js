@@ -124,7 +124,7 @@ async function loadLazy(doc) {
 
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
-
+  loadCSS(`${window.hlx.codeBasePath}/styles/bootstrap.css`);
   loadCSS(`${window.hlx.codeBasePath}/styles/styles.css`);
   loadFonts();
 }
