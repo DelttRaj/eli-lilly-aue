@@ -1,21 +1,97 @@
-footer {
+/* Footer Wrapper Styling */
+
+.footer-wrapper {
   background-color: #212121;
-  color: white;
-  font-size: var(--body-font-size-xs);
+  color: #fff; /* White text */
+  font-size: 16px;
+  font-family: "IBM Plex Sans", Arial, sans-serif; /* Added generic font family */
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+.footer-paragraph-maincontainer {
+  padding: 48px 48px 32px ; /* Use shorthand property */
 }
 
-footer .footer p {
-  margin: 0;
+.footer-paragraph-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+.footer-paragraph-2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer-paragraph-group-3 {
+  display: flex;
+  align-items: center;
+}
+
+.footer-paragraph-group-3 img {
+  width: 90px;
+  height: 48px;
+  padding-right: 60px;
+  padding-top: 16px;
+}
+
+.footer-paragraph-sub-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Align items in a row */
+.footer-paragraph-sub-container picture {
+  height: 48px;
+  width: 90px;
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+}
+
+/* Text and Link Styling */
+.footer-paragraph-5 a {
+  padding: 10px;
+}
+
+.footer-wrapper p,
+.footer-wrapper a {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.footer-wrapper a {
+  color: #fff; /* White links */
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-wrapper a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Links Section Styling */
+.footer-links {
+  display: flex;
+  gap: 10px; /* Add space between links */
+  flex-wrap: wrap; /* Wrap links for responsiveness */
+}
+
+/* Responsive Design */
+@media (width <= 768px) {
+  .footer-wrapper {
+      padding: 15px 20px;
+  }
+  
+  .footer-links {
+      flex-direction: column; /* Stack links vertically */
+  }
+
+  .footer-links a {
+      margin-bottom: 5px; /* Add space between links */
   }
 }
+
+@media (width >= 992px) {
+  .col-lg-10 {
+    width: 83.3333%;
+  }
+}
+
