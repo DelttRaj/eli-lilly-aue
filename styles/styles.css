@@ -9,9 +9,8 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
- 
 
-:root {
+ :root {
   /* colors */
   --background-color: white;
   --light-color: #f8f8f8;
@@ -21,8 +20,9 @@
   --link-hover-color: #1d3ecf;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: "IBM Plex Sans", sans-serif;
+  --heading-font-family: "IBM Plex Sans",
+    sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -87,7 +87,6 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1);
 }
 
 header .header,
@@ -257,4 +256,3 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
-
